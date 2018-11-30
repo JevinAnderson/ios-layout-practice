@@ -8,7 +8,15 @@ module.exports = `
     <title>Server Endpoints</title>
   </head>
   <body>
+    <style>
+      a {
+        display: block;
+      }
+    </style>
     <a href="/people">People api</a>
+    <a href="/hub">Hub Api</a>
+    <a href="/transactions">Transactions api</a>
+    <a href="/promotions">Promotions api</a>
   </body>
 </html>
 `;

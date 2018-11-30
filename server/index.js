@@ -6,6 +6,7 @@ const _ = require('lodash');
 const config = require('./config');
 const endpoints = require('./endpoints');
 const people = require('./people');
+const hub = require('./hub');
 
 const app = express();
 app.use(morgan('dev'));
@@ -18,6 +19,10 @@ app.use(
 
 app.get('/people', people.getPeople);
 app.get('/people/:id', people.getPerson);
+
+app.get('/hub', hub.getHubData);
+app.get('/transactions', hub.getTransactions);
+app.get('/promotions', hub.getPromotions);
 
 app.use((req, res) => {
   res.send(endpoints);

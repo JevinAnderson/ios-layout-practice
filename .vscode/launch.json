@@ -7,6 +7,12 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Generate Hub Data",
+      "program": "${workspaceFolder}/server/hub/generate.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Generate People",
       "program": "${workspaceFolder}/server/people/generator.js"
     },

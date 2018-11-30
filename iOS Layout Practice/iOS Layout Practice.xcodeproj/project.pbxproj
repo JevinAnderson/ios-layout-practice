@@ -12,6 +12,11 @@
 		652F213721B05E8200D06398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652F213521B05E8200D06398 /* Main.storyboard */; };
 		652F213921B05E8300D06398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652F213821B05E8300D06398 /* Assets.xcassets */; };
 		652F213C21B05E8300D06398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652F213A21B05E8300D06398 /* LaunchScreen.storyboard */; };
+		6575777221B0727F00DD5872 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6575777121B0727F00DD5872 /* ScrollViewController.swift */; };
+		6575777421B075E800DD5872 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6575777321B075E800DD5872 /* TableViewController.swift */; };
+		6575777621B0885B00DD5872 /* menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6575777521B0885B00DD5872 /* menu.xib */; };
+		6575777821B0888300DD5872 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6575777721B0888300DD5872 /* menu.swift */; };
+		6575777A21B0A4E300DD5872 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6575777921B0A4E300DD5872 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		652F213821B05E8300D06398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		652F213B21B05E8300D06398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		652F213D21B05E8300D06398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6575777121B0727F00DD5872 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		6575777321B075E800DD5872 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		6575777521B0885B00DD5872 /* menu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = menu.xib; sourceTree = "<group>"; };
+		6575777721B0888300DD5872 /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu.swift; sourceTree = "<group>"; };
+		6575777921B0A4E300DD5872 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +67,14 @@
 				652F213121B05E8200D06398 /* AppDelegate.swift */,
 				652F213321B05E8200D06398 /* ViewController.swift */,
 				652F213521B05E8200D06398 /* Main.storyboard */,
+				6575777121B0727F00DD5872 /* ScrollViewController.swift */,
 				652F213821B05E8300D06398 /* Assets.xcassets */,
 				652F213A21B05E8300D06398 /* LaunchScreen.storyboard */,
 				652F213D21B05E8300D06398 /* Info.plist */,
+				6575777321B075E800DD5872 /* TableViewController.swift */,
+				6575777521B0885B00DD5872 /* menu.xib */,
+				6575777721B0888300DD5872 /* menu.swift */,
+				6575777921B0A4E300DD5872 /* Model.swift */,
 			);
 			path = "iOS Layout Practice";
 			sourceTree = "<group>";
@@ -124,6 +139,7 @@
 			files = (
 				652F213C21B05E8300D06398 /* LaunchScreen.storyboard in Resources */,
 				652F213921B05E8300D06398 /* Assets.xcassets in Resources */,
+				6575777621B0885B00DD5872 /* menu.xib in Resources */,
 				652F213721B05E8200D06398 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6575777821B0888300DD5872 /* menu.swift in Sources */,
 				652F213421B05E8200D06398 /* ViewController.swift in Sources */,
+				6575777221B0727F00DD5872 /* ScrollViewController.swift in Sources */,
+				6575777A21B0A4E300DD5872 /* Model.swift in Sources */,
 				652F213221B05E8200D06398 /* AppDelegate.swift in Sources */,
+				6575777421B075E800DD5872 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jevinanderson.iOS-Layout-Practice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,7 +330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jevinanderson.iOS-Layout-Practice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
