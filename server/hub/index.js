@@ -67,8 +67,17 @@ function getTransactions(req, res) {
   }, delay);
 }
 
+function getAllTransactions(req, res) {
+  res.json({
+    timestamp: Date.now(),
+    total: transactions.length,
+    transactions
+  });
+}
+
 module.exports = {
   getHubData,
   getPromotions,
-  getTransactions
+  getTransactions,
+  getAllTransactions
 };

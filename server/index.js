@@ -22,6 +22,7 @@ app.get('/people/:id', people.getPerson);
 
 app.get('/hub', hub.getHubData);
 app.get('/transactions', hub.getTransactions);
+app.get('/transactions/all', hub.getAllTransactions);
 app.get('/promotions', hub.getPromotions);
 
 app.use((req, res) => {
