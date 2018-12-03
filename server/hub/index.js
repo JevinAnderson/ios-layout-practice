@@ -17,30 +17,35 @@ const getPaymentDate = (function() {
 
 const getHubData = (req, res) => {
   const creditLine = getCreditLine();
-  const balance = (Math.random() * creditLine).toFixed(2);
-  const availableCredit = creditLine - balance;
+  const balance = Number((Math.random() * creditLine).toFixed(2));
+  const availableCredit = Number((creditLine - balance).toFixed(2));
   const paymentDate = getPaymentDate();
-  const minimumPaymentDue = (Math.random() * balance).toFixed(2);
-  const lastStatementBalance = (Math.random() * balance).toFixed(2);
+  const minimumPaymentDue = Number((Math.random() * balance).toFixed(2));
+  const lastStatementBalance = Number((Math.random() * balance).toFixed(2));
 
-  const results = {
-    timestamp: Date.now(),
-    creditLine,
-    balance,
-    availableCredit,
-    paymentDate,
-    minimumPaymentDue,
-    lastStatementBalance
-  };
+  const delay = getDelay(10);
 
-  res.json(results);
+  setTimeout(() => {
+    const results = {
+      timestamp: Date.now(),
+      creditLine,
+      balance,
+      availableCredit,
+      paymentDate,
+      minimumPaymentDue,
+      lastStatementBalance
+    };
+
+    res.json(results);
+  }, delay);
 };
 
-const getDelay = (seconds = 10) =>
-  Math.max(Math.floor(seconds * 1000 * Math.random()), 500);
+function getDelay(seconds = 10) {
+  return Math.max(Math.floor(seconds * 1000 * Math.random()), 500);
+}
 
 function getPromotions(req, res) {
-  const delay = getDelay(2);
+  const delay = getDelay(10);
 
   setTimeout(() => {
     res.json({
@@ -54,7 +59,7 @@ function getTransactions(req, res) {
   const page = Math.max(_.get(req, 'query.page', 0) - 1, 0);
   const index = page * 10;
   const slice = transactions.slice(index, index + 10);
-  const delay = getDelay(2);
+  const delay = getDelay(10);
 
   setTimeout(() => {
     res.json({

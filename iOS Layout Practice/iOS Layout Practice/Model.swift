@@ -23,14 +23,22 @@ let kPROMOTIONS_URL = "http://127.0.0.1:2001/promotions"
 let kTRANSACTIONS_STAGNATION = kHour
 let kTRANSACTIONS_URL = "http://127.0.0.1:2001/transactions/all"
 
+fileprivate class Observer {
+  weak var ref: HubModelDelegate?
+  
+  init(_ reference: HubModelDelegate) {
+    ref = reference
+  }
+}
+
 struct HubResponse: Codable {
   var timestamp: Int
   var creditLine: Int
-  var balance: String
+  var balance: Double
   var availableCredit: Double
   var paymentDate: String
-  var minimumPaymentDue: String
-  var lastStatementBalance: String
+  var minimumPaymentDue: Double
+  var lastStatementBalance: Double
 }
 
 struct DateResponse: Codable {
@@ -70,13 +78,8 @@ struct TransactionResponse: Codable {
 }
 
 class HubModel {
-  weak var delegate: HubModelDelegate? {
-    didSet {
-      fetch()
-    }
-  }
-  
   static let shared = HubModel()
+  private var observers = [Observer]()
   
   var hub: HubResponse?
   var transactions: [Transaction]?
@@ -112,7 +115,9 @@ class HubModel {
       
       do {
         self.hub = try decoder.decode(HubResponse.self, from: data)
-        self.delegate?.onModelUpdate(self)
+        DispatchQueue.main.async {
+          self.onModelUpdate()
+        }
       } catch {
         return
       }
@@ -137,7 +142,9 @@ class HubModel {
       do {
         let transactionResponse = try decoder.decode(TransactionResponse.self, from: data)
         self.transactions = transactionResponse.transactions
-        self.delegate?.onModelUpdate(self)
+        DispatchQueue.main.async {
+          self.onModelUpdate()
+        }
       } catch let err {
         print("\(err)")
         return
@@ -163,10 +170,28 @@ class HubModel {
       do {
         let promotionResponse = try decoder.decode(PromotionResponse.self, from: data)
         self.promotions = promotionResponse.promotions
-        self.delegate?.onModelUpdate(self)
+        DispatchQueue.main.async {
+          self.onModelUpdate()
+        }
       } catch {
         return
       }
       }.resume()
+  }
+  
+  func addObserver(_ observer: HubModelDelegate) {
+    fetch()
+    
+    self.observers.append(Observer(observer))
+  }
+  
+  func removeObserver(_ observer: HubModelDelegate) {
+    self.observers = self.observers.filter {
+      $0.ref !== nil && $0.ref! !== observer
+    }
+  }
+  
+  private func onModelUpdate() {
+    self.observers.forEach { $0.ref?.onModelUpdate(self) }
   }
 }

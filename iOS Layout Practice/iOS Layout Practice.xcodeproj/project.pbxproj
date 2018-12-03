@@ -12,11 +12,15 @@
 		652F213721B05E8200D06398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652F213521B05E8200D06398 /* Main.storyboard */; };
 		652F213921B05E8300D06398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652F213821B05E8300D06398 /* Assets.xcassets */; };
 		652F213C21B05E8300D06398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652F213A21B05E8300D06398 /* LaunchScreen.storyboard */; };
+		65591C8921B5A67100223289 /* SummaryTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65591C8821B5A67100223289 /* SummaryTableView.xib */; };
+		65591C8B21B5A68300223289 /* SummaryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65591C8A21B5A68300223289 /* SummaryTableView.swift */; };
 		6575777221B0727F00DD5872 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6575777121B0727F00DD5872 /* ScrollViewController.swift */; };
 		6575777421B075E800DD5872 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6575777321B075E800DD5872 /* TableViewController.swift */; };
 		6575777621B0885B00DD5872 /* menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6575777521B0885B00DD5872 /* menu.xib */; };
 		6575777821B0888300DD5872 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6575777721B0888300DD5872 /* menu.swift */; };
 		6575777A21B0A4E300DD5872 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6575777921B0A4E300DD5872 /* Model.swift */; };
+		65B4C04921B2089C00ADC232 /* HubHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B4C04821B2089C00ADC232 /* HubHeader.xib */; };
+		65B4C04B21B208C000ADC232 /* HubHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4C04A21B208C000ADC232 /* HubHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +31,15 @@
 		652F213821B05E8300D06398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		652F213B21B05E8300D06398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		652F213D21B05E8300D06398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65591C8821B5A67100223289 /* SummaryTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryTableView.xib; sourceTree = "<group>"; };
+		65591C8A21B5A68300223289 /* SummaryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableView.swift; sourceTree = "<group>"; };
 		6575777121B0727F00DD5872 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		6575777321B075E800DD5872 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		6575777521B0885B00DD5872 /* menu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = menu.xib; sourceTree = "<group>"; };
 		6575777721B0888300DD5872 /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu.swift; sourceTree = "<group>"; };
 		6575777921B0A4E300DD5872 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		65B4C04821B2089C00ADC232 /* HubHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HubHeader.xib; sourceTree = "<group>"; };
+		65B4C04A21B208C000ADC232 /* HubHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,10 @@
 				6575777521B0885B00DD5872 /* menu.xib */,
 				6575777721B0888300DD5872 /* menu.swift */,
 				6575777921B0A4E300DD5872 /* Model.swift */,
+				65B4C04821B2089C00ADC232 /* HubHeader.xib */,
+				65B4C04A21B208C000ADC232 /* HubHeader.swift */,
+				65591C8821B5A67100223289 /* SummaryTableView.xib */,
+				65591C8A21B5A68300223289 /* SummaryTableView.swift */,
 			);
 			path = "iOS Layout Practice";
 			sourceTree = "<group>";
@@ -138,8 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				652F213C21B05E8300D06398 /* LaunchScreen.storyboard in Resources */,
+				65B4C04921B2089C00ADC232 /* HubHeader.xib in Resources */,
 				652F213921B05E8300D06398 /* Assets.xcassets in Resources */,
 				6575777621B0885B00DD5872 /* menu.xib in Resources */,
+				65591C8921B5A67100223289 /* SummaryTableView.xib in Resources */,
 				652F213721B05E8200D06398 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,9 +167,11 @@
 			files = (
 				6575777821B0888300DD5872 /* menu.swift in Sources */,
 				652F213421B05E8200D06398 /* ViewController.swift in Sources */,
+				65591C8B21B5A68300223289 /* SummaryTableView.swift in Sources */,
 				6575777221B0727F00DD5872 /* ScrollViewController.swift in Sources */,
 				6575777A21B0A4E300DD5872 /* Model.swift in Sources */,
 				652F213221B05E8200D06398 /* AppDelegate.swift in Sources */,
+				65B4C04B21B208C000ADC232 /* HubHeader.swift in Sources */,
 				6575777421B075E800DD5872 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
