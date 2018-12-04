@@ -8,12 +8,24 @@
 
 import UIKit
 
-class ScrollViewController: UIViewController, menuDelegate, HubModelDelegate {
+class ScrollViewController: UIViewController, menuDelegate, HubModelDelegate, PromotionsHubViewDelegate {
   @IBOutlet weak var scrollSubViewHeightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var promotionsHubViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var menuView: menu!
   @IBOutlet weak var headerView: HubHeader!
+  @IBOutlet weak var promotionsHubView: PromotionsHubView! {
+    didSet {
+      promotionsHubView.delegate = self
+    }
+  }
   
-  
+  func updatePromotionsHubViewConstraints(_ promotionsHubView: PromotionsHubView) {
+    self.promotionsHubViewHeightConstraint.constant = CGFloat(promotionsHubView.height)
+
+    UIView.animate(withDuration: 0.6) {
+      self.view.layoutIfNeeded()
+    }
+  }
   
   func onModelUpdate(_ model: HubModel) {
     print("Model updated!")
@@ -30,7 +42,6 @@ class ScrollViewController: UIViewController, menuDelegate, HubModelDelegate {
   
   override func viewDidLoad() {
     menuView.delegate = self
-//    HubModel.shared.delegate = self
     HubModel.shared.addObserver(self)
   }
   

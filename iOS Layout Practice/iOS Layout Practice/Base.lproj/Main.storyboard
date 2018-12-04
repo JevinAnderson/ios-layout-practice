@@ -99,7 +99,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Htw-eh-SvA">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5D-7y-Rq5" customClass="HubHeader" customModule="iOS_Layout_Practice" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -110,9 +110,15 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jh8-gw-Dwc" customClass="SummaryTableView" customModule="iOS_Layout_Practice" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="120" width="375" height="300"/>
-                                                <color key="backgroundColor" red="1" green="0.35153448780425933" blue="0.085180013231334839" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="wCI-eO-HGy"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xiw-i3-oSe" customClass="PromotionsHubView" customModule="iOS_Layout_Practice" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="420" width="375" height="600"/>
+                                                <color key="backgroundColor" red="1" green="0.47646115579999998" blue="0.83978387350000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="600" id="tKX-aZ-LPY"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -120,9 +126,12 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Jh8-gw-Dwc" secondAttribute="trailing" id="1Vs-CA-Nau"/>
                                             <constraint firstItem="V5D-7y-Rq5" firstAttribute="leading" secondItem="Htw-eh-SvA" secondAttribute="leading" id="B3g-0L-xiz"/>
-                                            <constraint firstAttribute="height" constant="1000" id="Jxs-87-zXx"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xiw-i3-oSe" secondAttribute="trailing" id="BCs-Ia-WR1"/>
+                                            <constraint firstItem="Xiw-i3-oSe" firstAttribute="top" secondItem="Jh8-gw-Dwc" secondAttribute="bottom" id="EFW-in-nkM"/>
+                                            <constraint firstAttribute="height" constant="1200" id="Jxs-87-zXx"/>
                                             <constraint firstItem="Jh8-gw-Dwc" firstAttribute="top" secondItem="V5D-7y-Rq5" secondAttribute="bottom" id="ely-TW-Zom"/>
                                             <constraint firstAttribute="trailing" secondItem="V5D-7y-Rq5" secondAttribute="trailing" id="sdP-P7-zQP"/>
+                                            <constraint firstItem="Xiw-i3-oSe" firstAttribute="leading" secondItem="Htw-eh-SvA" secondAttribute="leading" id="tgF-ur-bCl"/>
                                             <constraint firstItem="Jh8-gw-Dwc" firstAttribute="leading" secondItem="Htw-eh-SvA" secondAttribute="leading" id="vjH-zD-IKa"/>
                                             <constraint firstItem="V5D-7y-Rq5" firstAttribute="top" secondItem="Htw-eh-SvA" secondAttribute="top" id="zVP-P3-eH2"/>
                                         </constraints>
@@ -153,6 +162,8 @@
                     <connections>
                         <outlet property="headerView" destination="V5D-7y-Rq5" id="Pkp-of-it6"/>
                         <outlet property="menuView" destination="8pg-Kk-YiH" id="QR7-cI-SXl"/>
+                        <outlet property="promotionsHubView" destination="Xiw-i3-oSe" id="8au-l0-MmA"/>
+                        <outlet property="promotionsHubViewHeightConstraint" destination="tKX-aZ-LPY" id="iGK-NT-aJh"/>
                         <outlet property="scrollSubViewHeightConstraint" destination="Jxs-87-zXx" id="2cV-0K-BZe"/>
                     </connections>
                 </viewController>
