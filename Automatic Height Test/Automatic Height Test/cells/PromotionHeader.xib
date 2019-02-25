@@ -12,23 +12,35 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromotionHeader" customModule="Automatic_Height_Test" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="UITableViewHeaderFooterView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="80" text="Special Financing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTt-Tl-L3m">
-                    <rect key="frame" x="10" y="10" width="355" height="80"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="g9d-7E-NXo">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="80" text="Special Financing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTt-Tl-L3m">
+                            <rect key="frame" x="10" y="10" width="355" height="80"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="tTt-Tl-L3m" secondAttribute="trailing" constant="10" id="EPR-0A-70P"/>
+                        <constraint firstItem="tTt-Tl-L3m" firstAttribute="leading" secondItem="g9d-7E-NXo" secondAttribute="leading" constant="10" id="aoR-yU-4XE"/>
+                        <constraint firstItem="tTt-Tl-L3m" firstAttribute="top" secondItem="g9d-7E-NXo" secondAttribute="top" constant="10" id="ezj-4W-N5A"/>
+                        <constraint firstAttribute="bottom" secondItem="tTt-Tl-L3m" secondAttribute="bottom" constant="10" id="pub-2U-288"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="tTt-Tl-L3m" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="1ir-Lv-qeU"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="tTt-Tl-L3m" secondAttribute="bottom" constant="10" id="Ic1-Ub-0MP"/>
-                <constraint firstItem="tTt-Tl-L3m" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Kqm-qi-wr8"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tTt-Tl-L3m" secondAttribute="trailing" constant="10" id="Pds-iv-8aq"/>
+                <constraint firstItem="g9d-7E-NXo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Bpa-fa-STf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="g9d-7E-NXo" secondAttribute="trailing" id="UkI-ez-SGa"/>
+                <constraint firstItem="g9d-7E-NXo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="w6j-ci-sT7"/>
+                <constraint firstItem="g9d-7E-NXo" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ybv-kx-fN1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

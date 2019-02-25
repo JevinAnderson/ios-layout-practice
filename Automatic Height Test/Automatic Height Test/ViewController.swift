@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-  let paymentDetails: [PaymentDetailsModel] = (0...3).map { _ in Random.paymentDetailsModel() }
+  let paymentDetails: [PaymentDetailsModel] = (0...20).map { _ in Random.paymentDetailsModel() }
   var expandedDetails = false {
     didSet {
       if expandedDetails {
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     return x.row == y.row && x.section == y.section
   }
   
-  let promotions: [PromotionCellModel] = (0...6).map { _ in
+  let promotions: [PromotionCellModel] = (0...20).map { _ in
     return Random.promotionModel()
   }
   
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
       table.dataSource = self
       table.register(UINib(nibName: kDetailsCellIdentifier, bundle: nil), forCellReuseIdentifier: kDetailsCellIdentifier)
       table.register(UINib(nibName: PaymentDetailsToggleCell.identifier, bundle: nil), forCellReuseIdentifier: PaymentDetailsToggleCell.identifier)
-      table.register(UINib(nibName: "PromotionHeader", bundle: nil), forCellReuseIdentifier: "PromotionHeader")
+      table.register(UINib(nibName: "PromotionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "PromotionHeader")
       table.register(UINib(nibName: "PromotionCell", bundle: nil), forCellReuseIdentifier: "PromotionCell")
       table.register(UINib(nibName: "PromotionToggleCell", bundle: nil), forCellReuseIdentifier: "PromotionToggleCell")
       table.reloadData()
@@ -143,6 +143,24 @@ extension ViewController: UITableViewDataSource {
     }
     
     return UITableViewCell()
+  }
+  
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    if section == 1 {
+      let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "PromotionHeader")
+      
+      return header
+    }
+    
+    return nil
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    if section == 1 {
+      return 50.0
+    }
+    
+    return 0
   }
 }
 
